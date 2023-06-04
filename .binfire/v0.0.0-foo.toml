@@ -1,0 +1,46 @@
+[mirrors]
+github = "https://github.com/rinse-repeat/binfire/releases/download/binfire%40v0.0.0-bar/${{FILE}}"
+
+[aarch64-apple-darwin.1]
+sha256 = "3c4de34cb5bc654a4680ad99c2b7ad02bf365a0f744e0fdadc050b54e323e25b"
+file = "binfire-aarch64-apple-darwin.bin"
+
+[aarch64-pc-windows-msvc.1]
+sha256 = "02dcc8e6c523c1b77b584f5d512d6ff3a60491f10d9c6fcde1a56021f9418e61"
+file = "binfire-aarch64-pc-windows-msvc.exe"
+
+[aarch64-unknown-linux-gnu.1]
+sha256 = "326eecac1db5c37aef0f8d5553ac72ee5f33a7ddb2c8a23f1ba0434e70e1c7de"
+file = "binfire-aarch64-unknown-linux-gnu.bin"
+
+[arm-unknown-linux-gnueabihf.1]
+sha256 = "95851cb49ecbd77bdefdfca2a42f9dd4c3d08828ed4d1341332966c1bcdb1c03"
+file = "binfire-arm-unknown-linux-gnueabihf.bin"
+
+[armv7-unknown-linux-gnueabihf.1]
+sha256 = "1caf0470c0388ada2e28ae19ca623d2b7c8da0f0938720ba9c1a46ba783669ad"
+file = "binfire-armv7-unknown-linux-gnueabihf.bin"
+
+[armv7-unknown-linux-musleabihf.1]
+sha256 = "935734e189cb594ef7c63283e01aec693a96b96cc7191844e7c32741198dfc52"
+file = "binfire-armv7-unknown-linux-musleabihf.bin"
+
+[i686-pc-windows-msvc.1]
+sha256 = "21881576d3de6967d30cf7d11a1dc6fe84b7d8853d9d81ea35b9883c20eeb4ce"
+file = "binfire-i686-pc-windows-msvc.exe"
+
+[x86_64-apple-darwin.1]
+sha256 = "ca65359df70ad2aafa461468599006beb0f686df6f094edf444487f329b161b8"
+file = "binfire-x86_64-apple-darwin.bin"
+
+[x86_64-pc-windows-gnu.1]
+sha256 = "7c2497dd48a783c8556bb084662ebf59174031ff7966f0cb99325b7d65670113"
+file = "binfire-x86_64-pc-windows-gnu.exe"
+
+[x86_64-pc-windows-msvc.1]
+sha256 = "a45ba4539d047c8179254a5cc814abd4d5381e7fa072458d97cd0e21bc13af4c"
+file = "binfire-x86_64-pc-windows-msvc.exe"
+
+[binfire-x86_64-unknown-linux-gnu.1]
+sha256 = "b6957a4140089148f7bad3c8c7c8f46ebcbc1ee058047bb5764b15e1d986cb45"
+file = "binfire-x86_64-unknown-linux-gnu.bin"
