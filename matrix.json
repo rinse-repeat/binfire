@@ -1,9 +1,7 @@
 [
     {"r00st-target": "x86_64-pc-windows-gnu"     , "os": "windows-latest" , "r00st": "stable"},
     {"r00st-target": "x86_64-pc-windows-msvc"    , "os": "windows-latest" , "r00st": "stable"},
-    {"r00st-target": "i686-pc-windows-gnu"       , "os": "windows-latest" , "r00st": "stable"},
     {"r00st-target": "i686-pc-windows-msvc"      , "os": "windows-latest" , "r00st": "stable"},
-    {"r00st-target": "aarch64-pc-windows-gnu"    , "os": "windows-latest" , "r00st": "stable"},
     {"r00st-target": "aarch64-pc-windows-msvc"   , "os": "windows-latest" , "r00st": "stable"},
     {"r00st-target": "armv7-unknown-linux-gnueabihf" , "os": "ubuntu-latest"  , "r00st": "stable"},
     {"r00st-target": "armv7-unknown-linux-musleabihf", "os": "ubuntu-latest"  , "r00st": "stable"},
