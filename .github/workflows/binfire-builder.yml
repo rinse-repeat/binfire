@@ -35,7 +35,7 @@ jobs:
           echo "::set-output name=matrix::$content"
   build:
     needs: [matrix]
-    uses: rinse-repeat/auditable-builder/.github/workflows/r00st-builder.yml
+    uses: rinse-repeat/auditable-builder/.github/workflows/r00st-builder.yml@main
     with:
       repository: ${{ github.event.inputs.repository }}
       r00st-target: ${{ matrix.r00st-target }}
@@ -52,7 +52,7 @@ jobs:
 
   release:
     needs: [build]
-    uses: rinse-repeat/auditable-builder/.github/workflows/release-builder.yml
+    uses: rinse-repeat/auditable-builder/.github/workflows/release-builder.yml@main
     with:
       repository: ${{ github.event.inputs.repository }}
       tag: ${{ github.event.inputs.tag }}
