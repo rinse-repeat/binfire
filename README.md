@@ -1,6 +1,6 @@
 # binfire
 
-binfire add https://github.com/pinkforest/binfire/binfire.toml
+binfire add https://github.com/rinse-repeat/binfire/binfire.toml
 
 binfire app binfire list
 
