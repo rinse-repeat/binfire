@@ -5,4 +5,11 @@ edition = "2021"
 
 [dependencies]
 thiserror = { version = "1.0" }
-reqwest = { version = "0.11", default-features = false, features = ["blocking", "rustls-tls-webpki-roots"] }
+
+# armv7-unknown-linux-musleabihf -> no ring -> openssl
+# aarch64-pc-windows-msvc -> no ring -> native_tls
+# aarch64-pc-windows-gnu -> no ring -> native_tls
+
+[target.'cfg(target_arch = "x86_64")'.dependencies]
+reqwest = { version = "0.11", default-features = false, features = ["blocking"] }
+
