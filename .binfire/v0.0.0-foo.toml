@@ -1,5 +1,5 @@
 [mirrors]
-github = "https://github.com/rinse-repeat/binfire/releases/download/binfire%40v0.0.0-bar/${{FILE}}"
+github = "https://github.com/rinse-repeat/binfire/releases/download/binfire%40v0.0.0-bar/${{ file }}"
 
 [aarch64-apple-darwin.1]
 sha256 = "3c4de34cb5bc654a4680ad99c2b7ad02bf365a0f744e0fdadc050b54e323e25b"
