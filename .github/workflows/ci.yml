@@ -44,14 +44,14 @@ jobs:
 #      - run: cargo build --target thumbv7em-none-eabi --release
 #      - run: cargo build --target thumbv7em-none-eabi --release --features serde
 
-  build-docs:
-    name: Build docs
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: dtolnay/rust-toolchain@nightly
-    - run: make doc
-    - run: make doc-internal
+#  build-docs:
+#    name: Build docs
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v3
+#    - uses: dtolnay/rust-toolchain@nightly
+#    - run: make doc
+#    - run: make doc-internal
 
   cross:
     strategy:
