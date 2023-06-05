@@ -5,7 +5,7 @@ edition = "2021"
 categories = ["development-tools"]
 keywords = ["whatever"]
 description = "Whatever"
-license = "Apache 2.0/MIT"
+license = "Apache-2.0/MIT"
 readme = "README.md"
 repository = "https://github.com/rinse-repeat/binfire"
 
