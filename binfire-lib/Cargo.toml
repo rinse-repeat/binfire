@@ -2,6 +2,12 @@
 name = "binfire-lib"
 version = "0.0.0"
 edition = "2021"
+categories = ["development-tools"]
+keywords = ["whatever"]
+description = "Whatever"
+license = "Apache 2.0/MIT"
+readme = "README.md"
+repository = "https://github.com/rinse-repeat/binfire"
 
 [dependencies]
 thiserror = { version = "1.0" }
