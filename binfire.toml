@@ -4,5 +4,5 @@ current = "v0.0.0-bar"
 [channel.nightly]
 current = "v0.0.0-bar"
 
-[versions.v0.0.0-bar]
-include = ["https://github.com/rinse-repeat/binfire/blob/main/.binfire/v0.0.0-foo.toml"]
+[versions]
+"v0.0.0-bar" = ["https://github.com/rinse-repeat/binfire/blob/main/.binfire/v0.0.0-bar.toml"]
