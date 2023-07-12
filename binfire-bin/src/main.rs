@@ -9,7 +9,8 @@ pub mod args;
 
 use binfire_lib::Runner;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     // Argument parsing
     let parsed_args = match args::parse() {
         Ok(v) => v,
@@ -20,7 +21,7 @@ fn main() {
     };
 
     // Runner
-    match Runner::blocking(&parsed_args) {
+    match Runner::run(&parsed_args).await {
         Ok(_) => std::process::exit(0),
         Err(e) => {
             eprintln!("Run Error: {}.", e);

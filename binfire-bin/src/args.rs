@@ -1,5 +1,6 @@
 use binfire_lib::RunnerOpts;
 use binfire_lib::SubCommand;
+use pico_args::Arguments;
 use regex::Regex;
 
 const HELP: &str = "\
@@ -39,11 +40,31 @@ FLAVOR:
 #[derive(Debug, Eq, PartialEq)]
 pub struct ParsedOpts {
     sub_command: SubCommand,
+    sub_opts: SubCommandOpts,
 }
+
+#[derive(Debug, Eq, PartialEq)]
+pub enum SubCommandOpts {
+    Add(String),
+}
+
+//enum SubCommandOpts
 
 impl RunnerOpts for ParsedOpts {
     fn flag(&self, cmd: SubCommand) -> bool {
         self.sub_command == cmd
+    }
+}
+
+use binfire_lib::CommandAddOpts;
+
+impl CommandAddOpts for ParsedOpts {
+    fn spec(&self) -> &str {
+        match &self.sub_opts {
+            SubCommandOpts::Add(spec) => spec.as_str()
+            // TODO: Should this be fallible and handle at lib ?
+//            _ => panic!("BUG(args): CommandAddOpts URL was not parsed but was requested?"),
+        }
     }
 }
 
@@ -62,7 +83,7 @@ fn help_and_error(e: Option<&str>) -> ! {
 pub enum ArgsError {}
 
 pub fn parse() -> Result<ParsedOpts, ArgsError> {
-    let mut args = std::env::args();
+    let mut args = Arguments::from_env();
 
     let re_subcmds = vec![
         (
@@ -80,7 +101,7 @@ pub fn parse() -> Result<ParsedOpts, ArgsError> {
     ];
 
     // Is there a subcommand at all?
-    let find_subcmd = match args.next() {
+    let find_subcmd = match args.subcommand().unwrap() {
         Some(subcmd) => re_subcmds.iter().find(|&x| x.1.is_match(&subcmd)),
         None => help_and_error(None),
     };
@@ -90,11 +111,27 @@ pub fn parse() -> Result<ParsedOpts, ArgsError> {
         None => help_and_error(Some("Unknown subcomamnd")),
     };
 
-    // help_and_error(Some(&format!("Unknown arguments: {:?}.", remaining)));
+    let sub_opts = match found_subcmd {
+        SubCommand::Available => todo!(),
+        SubCommand::Default => todo!(),
+        SubCommand::Add => {
+            let spec = match args.free_from_str() {
+                Ok(a) => a,
+                Err(_) => help_and_error(Some("Missing SPEC argument for COMMAND add")),
+            };
+            SubCommandOpts::Add(spec)
+        }
+    };
 
     let binfire_args = ParsedOpts {
         sub_command: found_subcmd,
+        sub_opts,
     };
+
+    let remaining = args.finish();
+    if remaining.len() > 0 {
+        help_and_error(Some(&format!("Unknown arguments: {:?}.", remaining)));
+    }
 
     Ok(binfire_args)
 }

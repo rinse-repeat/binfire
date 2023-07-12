@@ -11,4 +11,6 @@ repository = "https://github.com/rinse-repeat/binfire"
 
 [dependencies]
 binfire-lib = { version = "0.0", default-features = false, path = "../binfire-lib" }
+pico-args = { version = "0.5", features = ["combined-flags"] }
 regex = { version = "1.6", default-features = false, features = ["std"] }
+tokio = { version = "1.29", features = ["full"] }

@@ -17,5 +17,9 @@ thiserror = { version = "1.0" }
 # aarch64-pc-windows-gnu -> no ring -> native_tls
 #[target.'cfg(target_arch = "x86_64")'.dependencies]
 
-reqwest = { version = "0.11", default-features = false, features = ["blocking"] }
-
+reqwest = { version = "0.11", default-features = false, features = ["rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+toml = { version = "0.7", features = ["parse"] }
+url = { version = "2.4" }
+regex = { version = "1.6" }
+once_cell = { version = "1.18" }
